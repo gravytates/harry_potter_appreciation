@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Character.destroy_all
+
+12.times do |index|
+  Character.create!(name: Faker::HarryPotter.unique.character, location: Faker::HarryPotter.location)
+end
