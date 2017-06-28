@@ -1,6 +1,12 @@
 <h1><%= @character.name %></h1>
 
 <h3>Location: <%= @character.location %></h3>
+<%= form_for @character do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, ['1', '2', '3', '4', '5'] %>
+  <br>
+  <%= f.submit 'Rate Character' %>
+<% end %>
 <h3>Rating: <%= @character.rating %></h3>
 
 <p><%= link_to "Edit", edit_character_path(@character) %></p>

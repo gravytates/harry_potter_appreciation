@@ -31,7 +31,7 @@ class CharactersController < ApplicationController
     @character= Character.find(params[:id])
     if @character.update(character_params)
       flash[:notice] = "Character successfully updated!"
-      redirect_to characters_path
+      redirect_to character_path(@character)
     else
       render :edit
     end
