@@ -1,5 +1,10 @@
 <%= render "layouts/errors", :object => @character %>
 
 <%= form_for @character do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name %>
+  <%= f.label :location%>
+  <%= f.text_field :location %>
+
   <%= f.submit %>
 <% end %>
