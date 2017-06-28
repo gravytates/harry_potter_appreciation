@@ -14,3 +14,21 @@
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 <p><%= link_to "Return to characters", characters_path %></p>
+
+<hr>
+<% if @character.reviews.any? %>
+  <h4>Here are the reviews for this character:</h4>
+
+  <ul>
+    <% @character.reviews.each do |review| %>
+      <li>
+        <%= review.author %> |
+        <%= review.body %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<p><%= link_to "New Review", new_character_review_path(@character) %></p>
