@@ -9,5 +9,13 @@
 Character.destroy_all
 
 12.times do |index|
-  Character.create!(name: Faker::HarryPotter.unique.character, location: Faker::HarryPotter.location)
+  character = Character.create!(name: Faker::HarryPotter.unique.character, location: Faker::HarryPotter.location)
+  3.times do |index|
+    character.reviews.create!(author: Faker::LordOfTheRings.character, body: Faker::Friends.quote)
+  end
+
 end
+
+p "Created #{Character.count} characters"
+
+p "Created #{Review.count} reviews"

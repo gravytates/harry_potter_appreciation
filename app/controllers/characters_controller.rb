@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
     @characters = Character.where(nil)
     @characters = @characters.alphabetical(params[:name]) if request.original_fullpath == "/characters.name"
     @characters = @characters.creation(params[:created_at]) if request.original_fullpath == "/characters.created_at"
+    @characters = @characters.most_reviews if request.original_fullpath == "/characters.reviews"
+
   end
 
   def show
