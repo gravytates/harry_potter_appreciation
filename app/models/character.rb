@@ -15,12 +15,14 @@ class Character < ApplicationRecord
 
 
   def average_rating
-    # binding.pry
-    # @character = Character.find(params[:id])
+    average = 0
     total = 0
-    self.ratings.each do |rating|
-      total += rating.rating
+    if self.ratings.length != 0
+      self.ratings.each do |rating|
+        total += rating.rating
+      end
+      average = total / self.ratings.length
     end
-    total / self.ratings.length
+    average
   end
 end

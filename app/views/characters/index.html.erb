@@ -8,7 +8,7 @@
 
 <ul>
   <% @characters.each do |character| %>
-    <li><%= link_to character.name, character_path(character) %>, Reviews: <%= character.reviews.length %></li>
+    <li><%= link_to character.name, character_path(character) %>, Reviews: <%= character.reviews.length %>, Average Rating: <%= character.average_rating %></li>
   <% end %>
 </ul>
 
