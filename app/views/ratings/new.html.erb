@@ -1,0 +1,10 @@
+<h1>New Rating</h1>
+
+<%= render "layouts/errors", :object => @rating %>
+
+<%= form_for [@character,@rating]  do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, ['1', '2', '3', '4', '5'] %>
+  <br>
+  <%= f.submit 'Rate Character' %>
+<% end %>
